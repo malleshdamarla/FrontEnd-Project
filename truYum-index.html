@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>truYum</title>
+    <link rel="stylesheet" href="truYum-ui-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="icon" href="./truYum-ui-imges/truYum.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="truYum-ui-js.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="#"><img src="./truYumlogo.png" alt="truYum"></a>
+        <input class="loc" type="search" placeholder="Enter Location Here">
+        <span class="search">
+            <input class="srch" type="search" placeholder="Search Here">
+            <a href="#"><button class="btn">Search</button></a>
+        </span>
+        <nav class="menu">
+            <ul class="ul">
+                <li><a href="#"><button onclick="login()" id="Login">Login</button></a></li>
+                <li onclick="openNav()"><i class="fa-solid fa-caret-left"><a href="#">Menu</a></i></li>
+                <li><i class="fa-sharp fa-solid fa-cart-shopping"><a href="#">Cart</a></i></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="user">
+        <div class="form">
+            <h2>Login here</h2>
+            <input type="email" name="email" placeholder="Enter email/phone">
+            <input type="password" id="pass" name="password" oninput="passwordfun()" placeholder="Enter password">
+            <i class="fa-solid fa-eye" id="eye"></i>
+            <p id="res"></p>
+            <button id="btnn" value="Refresh Webpage." onclick="refreshPage()"><a href="#">Login</a></button>
+            <p class="link">New to truYum ?<br>
+                <a href="#" onclick="signup()">Sign up</a> here</a>
+            </p>
+        </div>
+        <div id="form1">
+            <center>
+                <h2 class="h2">Sign up</h2>
+                <h4 class="h4">or <br> <a href="#" onclick="login2()">Login to your account</a><br>
+                    <div class="input">
+                        <input type="number" name="number" placeholder="Phone number">
+                        <input type="text" name="Name" placeholder="Name">
+                        <input type="email" name="email" placeholder="Email">
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <p class="code">Have a referral code?</p>
+                    <button class="signupbtn" onclick="refreshPage1()">CONTINUE</button>
+            </center>
+            <p class="terms">By creating an account, I acccept the Terms & Conditions & Privacy Policy</p>
+        </div>
+    </div>
+    <!--<div id="signup">
+        
+    </div>-->
+    <div>
+        <div id="mySidenav" class="sidenav">
+            <header class="menuheader">
+            </header>
+            <a href="#">
+                <p>Order list</p>
+            </a>
+            <a href="#">
+                <p>Menu items</p>
+            </a>
+            <a href="#">
+                <p>List of items</p>
+            </a>
+            <a href="#">
+                <p></p>
+            </a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </div>
+    </div>
+    <div class="list">
+        <div class="item">
+            <center><img src="./truYum-ui-imges/sandwich.jpg" alt="sandwich"></center>
+            <div class="collection">
+                <p class="iname">Veg Sandwich</p>
+                <p class="rating">Rating</p>
+                <p class="delivery">Delivery 🕛</p>
+                <p class="price">Price</p>
+                <P class="a">☆ 4.5</P>
+                <p class="b">45min</p>
+                <p class="c">₹99/single</p>
+                <p class="status">Available <select id="opt">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></p>
+                <p class="status1">Free Deliver ✅</p>
+                <p class="Date">Date Of Lunch &nbsp;<input type="date"></p>
+                <button class="btn0">ADD to Cart</button>
+                <button class="btn0">Order now</button>
+
+            </div>
+        </div>
+        <div class="item1">
+            <center><img src="./truYum-ui-imges/buger.jpg" alt="buger"></center>
+            <div class="collection">
+                <p class="iname">Buger</p>
+                <p class="rating">Rating</p>
+                <p class="delivery">Delivery 🕛</p>
+                <p class="price">Price</p>
+                <P class="a">☆ 4.1</P>
+                <p class="b">40min</p>
+                <p class="c">₹101.00/single</p>
+                <p class="status">Available <select id="opt">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select></p>
+                <p class="status1">Free Deliver ✅</p>
+                <p class="Date">Date Of Lunch &nbsp;<input type="date"></p>
+                <button class="btn0">ADD to Cart</button>
+                <button class="btn0">Order now</button>
+            </div>
+        </div>
+        <div class="item2">
+            <center><img src="./truYum-ui-imges/pizza.jpg" alt="pizza"></center>
+            <div class="collection">
+                <p class="iname">Pizza</p>
+                <p class="rating">Rating</p>
+                <p class="delivery">Delivery 🕛</p>
+                <p class="price">Price</p>
+                <P class="a">☆ 4.1</P>
+                <p class="b">35min</p>
+                <p class="c">₹150.00/Mini</p>
+                <p class="status">Available <select id="opt">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></p>
+                <p class="status1">Free Deliver ✅</p>
+                <p class="Date">Date Of Lunch &nbsp;<input type="date"></p>
+                <button class="btn0">ADD to Cart</button>
+                <button class="btn0">Order now</button>
+            </div>
+        </div>
+        <div class="item3">
+            <center><img src="./truYum-ui-imges/French fries.jpg" alt="French fries"></center>
+            <div class="collection">
+                <p class="iname">French Fries</p>
+                <p class="rating">Rating</p>
+                <p class="delivery">Delivery 🕛</p>
+                <p class="price">Price</p>
+                <P class="a">☆ 3.8</P>
+                <p class="b">45min</p>
+                <p class="c">₹99.00/single</p>
+                <p class="status">Available <select id="opt">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></p>
+                <p class="status1">Free Deliver ✅</p>
+                <p class="Date">Date Of Lunch &nbsp;<input type="date"></p>
+                <button class="btn0">ADD to Cart</button>
+                <button class="btn0">Order now</button>
+            </div>
+        </div>
+        <div class="item4">
+            <center><img src="./truYum-ui-imges/Brownie.jpg" alt="Brownie"></center>
+            <div class="collection">
+                <p class="iname">Overload Brownie </p>
+                <p class="rating">Rating</p>
+                <p class="delivery">Delivery 🕛</p>
+                <p class="price">Price</p>
+                <P class="a">☆ 4.5</P>
+                <p class="b">35min</p>
+                <p class="c">₹110.00/1PS</p>
+                <p class="status">Available <select id="opt">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></p>
+                <p class="status1">Free Deliver ❌</p>
+                <p class="Date">Date Of Lunch &nbsp;<input type="date"></p>
+                <button class="btn0">ADD to Cart</button>
+                <button class="btn0">Order now</button>
+            </div>
+        </div>
+        <div class="item5">
+            <center><img src="./truYum-ui-imges/samosas.jpg" alt="samosas"></center>
+            <div class="collection">
+                <p class="iname">Samosas</p>
+                <p class="rating">Rating</p>
+                <p class="delivery">Delivery 🕛</p>
+                <p class="price">Price</p>
+                <P class="a">☆ 4.5</P>
+                <p class="b">45min</p>
+                <p class="c">₹99.00/single</p>
+                <p class="status">Available <select id="opt">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></p>
+                <p class="status1">Free Deliver ✅</p>
+                <p class="Date">Date Of Lunch &nbsp;<input type="date"></p>
+                <button class="btn0">ADD to Cart</button>
+                <button class="btn0">Order now</button>
+            </div>
+        </div>
+        <div class="item6">
+            <center><img src="./truYum-ui-imges/coke.webp" alt="coke"></center>
+            <div class="collection">
+                <p class="iname">Coke</p>
+                <p class="rating">Rating</p>
+                <p class="delivery">Delivery 🕛</p>
+                <p class="price">Price</p>
+                <P class="a">☆ 4.6</P>
+                <p class="b">25min</p>
+                <p class="c">₹149.00/Two</p>
+                <p class="status">Available <select id="opt">
+                        <option>No</option>
+                        <option>Yes</option>
+                    </select></p>
+                <p class="status1">Free Deliver ✅</p>
+                <p class="Date">Date Of Lunch &nbsp;<input type="date"></p>
+                <button class="btn0">ADD to Cart</button>
+                <button class="btn0">Order now</button>
+            </div>
+        </div>
+        <div class="item7">
+            <center><img src="./truYum-ui-imges/KFC.webp" alt="KFC"></center>
+            <div class="collection">
+                <p class="iname">KFC</p>
+                <p class="rating">Rating</p>
+                <p class="delivery">Delivery 🕛</p>
+                <p class="price">Price</p>
+                <P class="a">☆ 4.1</P>
+                <p class="b">55min</p>
+                <p class="c">₹719.00/Fly</p>
+                <p class="status">Available <select id="opt">
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select></p>
+                <p class="status1">Free Deliver ✅</p>
+                <p class="Date">Date Of Lunch &nbsp;<input type="date"></p>
+                <button class="btn0">ADD to Cart</button>
+                <button class="btn0">Order now</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="body_">
+            <div class="subody">
+                <div class="urderset">
+                    <div class="title1">Company</div>
+                    <ul class="footerlist">
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">About us</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Team</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Careers</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">truYum Blog</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Bug Bounty</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">truYum One</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">truYum Corporate</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">truYum Instamart</a></li>
+                    </ul>
+                </div>
+                <div class="urderset">
+                    <div class="title1">Contact</div>
+                    <ul class="footerlist">
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Help &amp; Support</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Partner with us</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Ride with us</a></li>
+                    </ul>
+                </div>
+                <div class="urderset">
+                    <div class="title1">Legal</div>
+                    <ul class="footerlist"><br><br><br>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Terms &amp; Conditions</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Refund &amp; Cancellation</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Privacy Policy</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Cookie Policy</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Offer Terms</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Phishing &amp; Fraud</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Corporate - truYum Money Codes Terms and
+                                Conditions</a></li>
+                        <li class="b-Hy9"><a class="_3TjLz" href="#">Corporate - truYum Discount Voucher Terms and
+                                Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <ul class="UL">
+                        <li class="social-items"><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                        <li class="social-items"><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                        <li class="social-items"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li class="social-items"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    </ul>
+                </div>
+                <div class="urderset">
+                    <a href="#"><img alt="img" src="./truYum-ui-imges/play store.png"></a>
+                    <a href="#"><img alt="img" src="./truYum-ui-imges/apple.png"></a>
+                </div>
+                <div class="titlee">
+                    Copyright &nbsp; & &nbsp; &copy; Web Coding. All Rights Reserved to desiginer...
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
